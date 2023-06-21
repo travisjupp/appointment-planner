@@ -6,7 +6,7 @@ export const TileList = ({contacts}) => {
     <div>
       {contacts.map(({name, ...description},i) => {
         return (
-          <Tile name={name} description={Object.values(description)} key={i+name.split(' ')[0]+name.split(' ')[1]} />
+          <Tile name={name} description={Object.values(description)} key={i} />
         );
       })}
     </div>
