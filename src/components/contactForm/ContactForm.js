@@ -26,15 +26,17 @@ export const ContactForm = ({
   return (
     <>
       <form id="contactForm" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: {name}</label>
-        <input type="text" name="name" id="name" value={name} onChange={e => setName(e.target.value)}></input>
-        <label htmlFor="phone">Phone: {phone}</label>
-        <input type="tel" name="phone" id="phone" value={phone}
-          pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" maxLength={12} placeholder="(XXX) XXX-XXXX"
-          onChange={phoneFormat}></input>
-        <label htmlFor="email">Email: {email}</label>
-        <input type="email" name="email" id="email" value={email} onChange={e => setEmail(e.target.value)}></input>
-        <input type="submit" id="submit" value="Submit"></input>
+        <label>Name: {name}
+          <input type="text" name="name" id="name" value={name} onChange={e => setName(e.target.value)} />
+        </label>
+        <label>Phone: {phone}
+          <input type="tel" name="phone" id="phone" value={phone} pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+            maxLength="12" placeholder="(###) ###-####" onChange={phoneFormat} />
+        </label>
+        <label>Email: {email}
+          <input type="email" name="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
+        </label>
+        <input type="submit" id="submit" value="Submit" />
       </form>
     </>
   );
