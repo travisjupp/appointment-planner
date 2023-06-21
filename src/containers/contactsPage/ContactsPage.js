@@ -21,18 +21,23 @@ export const ContactsPage = ({ contacts, addContact }) => {
     */
     let formData = new FormData(e.target);
     let contact = Object.fromEntries(formData.entries());
-    return isDuplicate ? <h2>Name is duplicate.</h2> : addContact(contact), setName(''), setPhone(''), setEmail('');
+    if (!isDuplicate) {
+      addContact(contact);
+      setName('');
+      setPhone('');
+      setEmail('');
+    }
   };
 
   /*
-  Using hooks, check for contact name in the )
+  Using hooks, check for contact name in the 
   contacts array variable in props
   */
   useEffect(() => {
     contacts.find(el => el.name === name) ?
       setIsDuplicate(true) :
       setIsDuplicate(false);
-  }, [name])
+  }, [name, contacts])
 
   return (
     <div>
