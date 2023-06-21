@@ -21,7 +21,7 @@ export const AppointmentForm = ({
   handleSubmit
 }) => {
 
-  let today = getTodayString();
+  // let today = getTodayString();
 
   return (
     <>
@@ -30,29 +30,13 @@ export const AppointmentForm = ({
           <input type="text" id="title" name="name" value={title} onChange={e => setTitle(e.target.value)} />
         </label>
         <label>Date: {date}
-          <input type="date" id="date" name="date" min={today} value={date} onChange={e => setDate(e.target.value)} />
+          <input type="date" id="date" name="date" min={getTodayString()} value={date} onChange={e => setDate(e.target.value)} />
         </label>
         <label>Time: {time}
           <input type="time" id="time" name="time" value={time} onChange={e => setTime(e.target.value)} />
         </label>
-        {/* A ContactPicker component with the contacts list passed in via props */}
         <ContactPicker contact={contact} contacts={contacts} setContact={setContact} />
-        {/* <label>Contact: {contact}
-          <select 
-          value={contact}
-          onChange={e => setContact(e.target.value)}
-
-          name="contact"
-          >
-            {
-              contacts.map((el, i) => {
-                return <option key={i} value={el.name}>{el.name}</option>
-              })
-            }
-          </select>
-        </label> */}
         <input type="submit" value="Submit" />
-
       </form>
     </>
   );

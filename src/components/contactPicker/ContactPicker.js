@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ContactPicker = ({contact, setContact, contacts}) => {
+export const ContactPicker = ({ contact, setContact, contacts }) => {
 
   return (
     <>

@@ -9,7 +9,6 @@ export const Tile = ({name, description}) => {
           return <p key={i} className="tile">{element}</p>
         })
       }
-      
     </div>
   );
 };

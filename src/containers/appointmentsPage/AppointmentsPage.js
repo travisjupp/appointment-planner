@@ -20,12 +20,13 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     */
     let formData = new FormData(e.target);
     let appointment = Object.fromEntries(formData.entries());
-    console.log('appointment', appointment);
     addAppointment(appointment);
-
-
+    setTitle('');
+    setContact('');
+    setDate('');
+    setTime('');
   };
-  console.log('contact', contact);
+
   return (
     <div>
       <section>

@@ -14,10 +14,10 @@ export const ContactForm = ({
     let ph = e.target.value;
 
     if (ph.length === 10) {
-      areaCode = ph.slice(0, 3); console.log('areaCode', areaCode);
-      prefix = ph.slice(3, 6); console.log('prefix', prefix);
-      number = ph.slice(6, 10); console.log('number', number);
-      let fn = areaCode + prefix + number; console.log('fn', fn);
+      areaCode = ph.slice(0, 3);
+      prefix = ph.slice(3, 6);
+      number = ph.slice(6, 10);
+      let fn = areaCode + prefix + number;
       setPhone(`(${areaCode}) ${prefix}-${number}`);
     } else {
       setPhone(ph.replace(/\W/g, ""));
