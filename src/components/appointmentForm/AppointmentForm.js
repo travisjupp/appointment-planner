@@ -21,8 +21,6 @@ export const AppointmentForm = ({
   handleSubmit
 }) => {
 
-  // let today = getTodayString();
-
   return (
     <>
       <form id="appointmentForm" onSubmit={handleSubmit} >

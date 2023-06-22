@@ -17,7 +17,6 @@ export const ContactForm = ({
       areaCode = ph.slice(0, 3);
       prefix = ph.slice(3, 6);
       number = ph.slice(6, 10);
-      let fn = areaCode + prefix + number;
       setPhone(`(${areaCode}) ${prefix}-${number}`);
     } else {
       setPhone(ph.replace(/\W/g, ""));
