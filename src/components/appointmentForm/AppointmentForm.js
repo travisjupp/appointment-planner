@@ -23,7 +23,7 @@ export const AppointmentForm = ({
 
   return (
     <>
-      <form id="appointmentForm" onSubmit={handleSubmit} netlify>
+      <form id="appointmentForm" name="appointmentForm" onSubmit={handleSubmit} netlify>
         <label>Title: {title}
           <input type="text" id="title" name="name" value={title} onChange={e => setTitle(e.target.value)} />
         </label>

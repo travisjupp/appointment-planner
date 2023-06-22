@@ -24,7 +24,7 @@ export const ContactForm = ({
   }
   return (
     <>
-      <form id="contactForm" onSubmit={handleSubmit} netlify>
+      <form id="contactForm" name="contactForm" onSubmit={handleSubmit} netlify>
         <label>Name: {name}
           <input type="text" name="name" id="name" value={name} onChange={e => setName(e.target.value)} />
         </label>
