@@ -24,6 +24,9 @@ export const AppointmentForm = ({
   return (
     <>
       <form id="appointmentForm" name="appointmentForm" method="POST" onSubmit={handleSubmit} netlify>
+        {/* netlify requires this  */}
+        <input type="hidden" name="form-name" value="appointmentForm" />
+
         <label>Title: {title}
           <input type="text" id="title" name="name" value={title} onChange={e => setTitle(e.target.value)} />
         </label>
