@@ -33,7 +33,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "appointmentForm", ...appointments })
+      body: encode({ "form-name": "appointmentForm", ...appointments[0] })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
