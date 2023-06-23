@@ -31,7 +31,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
           .join("&");
     }
 
-    fetch("/", {
+    fetch("/appointments", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "appointmentForm", appointment })
