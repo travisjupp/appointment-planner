@@ -25,7 +25,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     fetch("/appointments", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "appointmentForm", ...appointments })
+      body: encode({ "form-name": "appointmentForm", appointments })
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
