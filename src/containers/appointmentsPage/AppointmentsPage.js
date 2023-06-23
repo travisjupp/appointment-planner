@@ -31,7 +31,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "appointmentForm", ...appointments })
+      body: encode({ "form-name": "appointmentForm", ...appointments[0] })
     })
     .then(() => alert("Success!"))
     .catch(error => alert(error));
@@ -39,7 +39,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     // end netlify
     e.preventDefault();
 
-    console.log('appointments', appointments);
+    console.log('appointments', appointments[0]);
     console.log('appointment', appointment);
     console.log('...appointments', ...appointments);
     // console.log('...appointment', ...appointment);
