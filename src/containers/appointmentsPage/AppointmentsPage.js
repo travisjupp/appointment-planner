@@ -14,23 +14,7 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
   const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
-    // netlify stateful react form handling
-
-    const encode = (data) => {
-      return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-          .join("&");
-    }
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "appointmentForm", appointments })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-    // end netlify
+   
 
     e.preventDefault();
     /*
@@ -39,6 +23,24 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     let formData = new FormData(e.target);
     let appointment = Object.fromEntries(formData.entries());
     addAppointment(appointment);
+     // netlify stateful react form handling
+
+     const encode = (data) => {
+      return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+    }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "appointmentForm", appointment })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    // end netlify
+
     setTitle('');
     setContact('');
     setDate('');
