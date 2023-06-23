@@ -14,32 +14,35 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
   const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
-   
-
-    e.preventDefault();
     /*
     Add contact info and clear data  
     */
-    let formData = new FormData(e.target);
-    let appointment = Object.fromEntries(formData.entries());
-    addAppointment(appointment);
-     // netlify stateful react form handling
-
-     const encode = (data) => {
-      return Object.keys(data)
-          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-          .join("&");
+   let formData = new FormData(e.target);
+   let appointment = Object.fromEntries(formData.entries());
+   addAppointment(appointment);
+   // netlify stateful react form handling
+   
+   const encode = (data) => {
+     return Object.keys(data)
+     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+     .join("&");
     }
-
-    fetch("/appointments", {
+    
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "appointmentForm", appointment })
+      body: encode({ "form-name": "appointmentForm", ...appointments })
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
+    .then(() => alert("Success!"))
+    .catch(error => alert(error));
+    
     // end netlify
+    e.preventDefault();
+
+    console.log('appointments', appointments);
+    console.log('appointment', appointment);
+    console.log('...appointments', ...appointments);
+    // console.log('...appointment', ...appointment);
 
     setTitle('');
     setContact('');
