@@ -23,7 +23,7 @@ export const AppointmentForm = ({
 
   return (
     <>
-      <form id="appointmentForm" name="appointmentForm" onSubmit={handleSubmit} method="post" data-netlify="true">
+      <form id="appointmentForm" name="appointmentForm" onSubmit={handleSubmit} data-netlify="true">
       <input type="hidden" name="form-name" value="appointmentForm" />
 
         <label>Title: {title}
