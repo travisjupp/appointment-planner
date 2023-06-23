@@ -27,9 +27,6 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     let appointment = Object.fromEntries(formData.entries());
     addAppointment(appointment);
     // netlify stateful react form handling
-
-
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -37,14 +34,8 @@ export const AppointmentsPage = ({ appointments, addAppointment, contacts }) => 
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-
     // end netlify
     e.preventDefault();
-
-    console.log('appointments', appointments);
-    console.log('appointment', appointment);
-    console.log('...appointments', ...appointments);
-    // console.log('...appointment', ...appointment);
 
     setTitle('');
     setContact('');
